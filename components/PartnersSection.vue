@@ -50,27 +50,42 @@
                   <template v-if=" isLoading " class=" animate-pulse">
                      <swiper-slide class="">
                         <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
                         </div>
                      </swiper-slide>
                      <swiper-slide class="">
                         <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
                         </div>
                      </swiper-slide>
                      <swiper-slide class="">
                         <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
                         </div>
                      </swiper-slide>
                      <swiper-slide class="">
                         <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
                         </div>
                      </swiper-slide>
                      <swiper-slide class="">
                         <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide class="">
+                        <div
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide class="">
+                        <div
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide class="">
+                        <div
+                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
                         </div>
                      </swiper-slide>
 
