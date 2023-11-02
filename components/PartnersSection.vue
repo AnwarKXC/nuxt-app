@@ -48,44 +48,29 @@
    disableOnInteraction: false,
 } " :grab-cursor=" true ">
                   <template v-if=" isLoading ">
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
-                        </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+                     <swiper-slide class=" animate-pulse">
+                     </swiper-slide>
+
 
                   </template>
                   <template v-else>
-                     <swiper-slide v-for="        item          in          sliderData         ">
-                        <LazyNuxtImg format="webp" :src=" item.main_image " quality="50"
+                     <swiper-slide v-for="          item            in            sliderData           ">
+                        <LazyNuxtImg @load=" imageLoaded " loading="lazy" format="webp"
+                           :src=" item.main_image || '../assets/logo.png' " quality="50"
                            :alt=" item.name " />
                      </swiper-slide>
                   </template>
@@ -128,6 +113,12 @@ watchEffect( () => {
    getData()
 } )
 
+const imageStyle = ref( { opacity: 0 } )
+
+const imageLoaded = () => {
+   imageStyle.value = { opacity: 1 }
+};
+
 </script>
 
 <style  scoped>
@@ -142,10 +133,11 @@ watchEffect( () => {
    border-radius: 15px;
    aspect-ratio: 1/1;
    overflow: hidden;
-   background-image: url('/assets/logo.png');
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
+   background-image: url("../assets/logo.png");
+
    display: flex;
    justify-content: center;
    align-items: center;

@@ -8,30 +8,33 @@
          disableOnInteraction: false,
       } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
          :pagination=" value ">
-         <template v-if=" isLoading " class=" animate-pulse">
-             <swiper-slide>
-    <img class=" animate-pulse" src="../assets//logo.png" alt="">
-               </swiper-slide>
-             <swiper-slide>
-    <img class=" animate-pulse" src="../assets//logo.png" alt="">
-               </swiper-slide>
-             <swiper-slide>
-    <img class=" animate-pulse" src="../assets//logo.png" alt="">
-               </swiper-slide>
-             <swiper-slide>
-    <img class=" animate-pulse" src="../assets//logo.png" alt="">
-               </swiper-slide>
-             <swiper-slide>
-    <img class=" animate-pulse" src="../assets//logo.png" alt="">
-               </swiper-slide>
-            
+         <template v-if=" isLoading " >
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+            <swiper-slide class=" animate-pulse bg-zinc-200">
+               
+            </swiper-slide>
+
+
          </template>
          <template v-else>
-            <swiper-slide v-for="   item    in   sliderData   ">
-               <LazySliderImage :item=" item " :key=" item.id " />
+            <swiper-slide v-for="item  in   sliderData  ">
+               <SliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
          </template>
-
       </swiper>
    </section>
 </template>
@@ -48,10 +51,12 @@ const getData = async () => {
             lang: locale.value
          }
       } )
-      const data = response.data.records
-      sliderData.value = data
-      isLoading.value = false
+      const data = await response.data.records
+      sliderData.value = await data
 
+      setTimeout( () => {
+         isLoading.value = false
+      }, 1000 )
    } catch ( error ) {
       console.error( 'Error fetching data:', error )
    }
@@ -100,8 +105,10 @@ watchEffect( () => {
    width: 100vw;
    aspect-ratio: 2/.8;
    background-size: contain;
+   background-color: #eee;
    background-repeat: no-repeat;
    background-position: center;
+   background-image: url("../assets/logo.png");
    display: flex;
    justify-content: center;
    align-items: center;
