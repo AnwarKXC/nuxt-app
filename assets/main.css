@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ /* *{
+   outline: #000000 solid 1px !important ; 
+}  */
+body{
+ overflow-x: hidden;
+}
+.button-prim{
+   @apply px-[38px] py-2.5 bg-prim rounded-[10px] text-white hover:bg-[#021de5]
+}
+.button-prim-nav{
+   @apply px-[38px] py-2.5 rounded-[10px] text-white hover:bg-[#021de5] lg:px-[20px] 
+}
+.button-sec{
+   @apply md:px-[15px] px-12 py-2.5 border-2 border-prim rounded-[10px] md:text-prim font-bold hover:bg-blue-100 text-base
+}
+.button-sec-mob{
+   @apply w-24 aspect-[5/2]  mt-5 mb-4 bg-[#152041fc]  text-xl  border-2 border-prim  rounded-[15px] hover:bg-[#263c7e]
+}
+.title{
+   @apply text-prim text-[28px]  font-bold py-[20px] capitalize  md:text-start  text-center 
+}
+.titleNum{
+   @apply text-prim text-[28px]  font-bold py-[20px] capitalize   text-center 
+}
+.title-contact{
+   @apply text-prim text-[22px] md:text-[28px]  font-bold py-[20px] capitalize  text-center 
+}
+.title-num{
+   @apply text-prim text-[28px] uppercase font-bold py-[8px] flex justify-center
+}
+
+.serv{
+   @apply w-[100px]  rounded-lg flex items-center justify-center overflow-hidden
+}
+.contact{
+   @apply p-4 w-[54px] h-[54px] rounded-[15px] bg-white
+
+}
+.form-text{
+@apply text-[#191933]  opacity-70
+}
+input,textarea{
+   @apply bg-white border-[#DFDFDF] rounded-[10px] md:py-[10px] py-1 border px-2 text-ellipsis whitespace-nowrap overflow-hidden 
+}
+input::placeholder,textarea::placeholder{
+color: #3D3D3D;
+opacity: 0.25;
+padding: 7px 5px;
+font-size: 13px;
+
+}
+label{
+   margin: 0 5px;
+color: #000000;
+opacity: 0.5;
+padding: 15px 0 0;
+}
