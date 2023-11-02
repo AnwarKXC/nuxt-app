@@ -48,19 +48,50 @@
    disableOnInteraction: false,
 } " :grab-cursor=" true ">
                   <template v-if=" isLoading ">
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4 " />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
-                     <swiper-slide :class=" { 'animate-pulse': isLoading } " class=" mx-4" />
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+                     <swiper-slide>
+                        <div
+                           class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+                        </div>
+                     </swiper-slide>
+
                   </template>
                   <template v-else>
-                     <swiper-slide v-for="     item       in       sliderData      ">
+                     <swiper-slide v-for="       item         in         sliderData        ">
                         <LazyNuxtImg format="webp" :src=" item.main_image " quality="50"
                            :alt=" item.name " />
                      </swiper-slide>
@@ -131,5 +162,4 @@ watchEffect( () => {
 .swiper-slide img {
    width: 100%;
    aspect-ratio: 1/1;
-}
-</style>
+}</style>

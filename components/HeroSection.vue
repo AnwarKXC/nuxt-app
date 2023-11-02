@@ -9,14 +9,24 @@
       } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
          :pagination=" value ">
          <template v-if=" isLoading ">
-            <swiper-slide :class=" { 'animate-pulse' :isLoading }" />
-            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
-            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
-            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
-            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
+            <swiper-slide>
+               <div
+                  class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+               </div>
+            </swiper-slide>
+            <swiper-slide>
+               <div
+                  class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+               </div>
+            </swiper-slide>
+            <swiper-slide>
+               <div
+                  class=" bg-[url('../assets/logo.png')] border border-[#BFBFBF] rounded-t-[15px] overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
+               </div>
+            </swiper-slide>
          </template>
          <template v-else>
-            <swiper-slide v-for="  item   in  sliderData  ">
+            <swiper-slide v-for="   item    in   sliderData   ">
                <LazySliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
          </template>
