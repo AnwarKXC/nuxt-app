@@ -9,11 +9,11 @@
       } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
          :pagination=" value ">
          <template v-if=" isLoading ">
-            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
-            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
-            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
-            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
-            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
+            <swiper-slide :class=" { 'animate-pulse' :isLoading }" />
+            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
+            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
+            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
+            <swiper-slide :class=" { 'animate-pulse' :isLoading }"  />
          </template>
          <template v-else>
             <swiper-slide v-for="  item   in  sliderData  ">
