@@ -9,14 +9,14 @@
       } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
          :pagination=" value ">
          <template v-if=" isLoading ">
-            <swiper-slide class="animate-pulse  " />
-            <swiper-slide class="animate-pulse  " />
-            <swiper-slide class="animate-pulse  " />
-            <swiper-slide class="animate-pulse  " />
-            <swiper-slide class="animate-pulse  " />
+            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
+            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
+            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
+            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
+            <swiper-slide :class=" isLoading ? 'animate-pulse'" />
          </template>
          <template v-else>
-            <swiper-slide v-for="        item         in         sliderData       ">
+            <swiper-slide v-for="  item   in  sliderData  ">
                <LazySliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
          </template>
@@ -88,7 +88,7 @@ watchEffect( () => {
    font-size: 18px;
    width: 100vw;
    aspect-ratio: 2/.8;
-      background-image: url('/assets/logo.png');
+   background-image: url('/assets/logo.png');
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
