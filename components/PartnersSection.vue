@@ -47,47 +47,40 @@
    delay: 2000,
    disableOnInteraction: false,
 } " :grab-cursor=" true ">
-                  <template v-if=" isLoading " class=" animate-pulse">
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
-                     <swiper-slide class="">
-                        <div
-                           class=" bg-[url('../assets/logo.png')]  overflow-hidden bg-contain animate-pulse bg-center bg-no-repeat w-full">
-                        </div>
-                     </swiper-slide>
+                  <template v-if=" isLoading ">
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                           <img class=" animate-pulse" src="../assets//logo.png" alt="">
+                        </swiper-slide>
 
                   </template>
                   <template v-else>

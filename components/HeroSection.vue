@@ -10,40 +10,21 @@
          :pagination=" value ">
          <template v-if=" isLoading " class=" animate-pulse">
              <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
+    <img class=" animate-pulse" src="../assets//logo.png" alt="">
                </swiper-slide>
              <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
+    <img class=" animate-pulse" src="../assets//logo.png" alt="">
                </swiper-slide>
              <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
+    <img class=" animate-pulse" src="../assets//logo.png" alt="">
                </swiper-slide>
              <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
+    <img class=" animate-pulse" src="../assets//logo.png" alt="">
                </swiper-slide>
              <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
+    <img class=" animate-pulse" src="../assets//logo.png" alt="">
                </swiper-slide>
-             <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
-               </swiper-slide>
-             <swiper-slide>
-                  <div
-                     class=" bg-[url('../assets/logo.png')] border  overflow-hidden bg-contain animate-pulse aspect-[2/.8] bg-center bg-no-repeat w-full">
-                  </div>
-               </swiper-slide>
+            
          </template>
          <template v-else>
             <swiper-slide v-for="   item    in   sliderData   ">
@@ -118,7 +99,6 @@ watchEffect( () => {
    font-size: 18px;
    width: 100vw;
    aspect-ratio: 2/.8;
-   background-image: url('/assets/logo.png');
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
