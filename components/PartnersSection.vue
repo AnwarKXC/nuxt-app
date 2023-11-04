@@ -9,45 +9,45 @@
             <div class=" flex items-center justify-between gap-4 pt-12 px-10 md:px-14 relative">
                <div class="swiper-button-next md:px-4 pt-12">
                </div>
+               <template v-if=" isLoading ">
 
-               <Swiper :breakpoints=" {
-                  '200': {
-                     slidesPerView: 1,
-                     spaceBetween: 50,
-                  },
-                  '350': {
-                     slidesPerView: 2,
-                     spaceBetween: 10,
-                  },
-                  '460': {
-                     slidesPerView: 2.5,
-                     spaceBetween: 40,
-                  },
-                  '640': {
-                     slidesPerView: 3,
-                     spaceBetween: 20,
-                  },
-                  '768': {
-                     slidesPerView: 3.50,
-                     spaceBetween: 40,
-                  },
-                  '1024': {
-                     slidesPerView: 4.50,
-                     spaceBetween: 35,
-                  },
-                  '1244': {
-                     slidesPerView: 6.35,
-                     spaceBetween: 35,
-                  },
+                  <Swiper :breakpoints=" {
+                     '200': {
+                        slidesPerView: 1,
+                        spaceBetween: 50,
+                     },
+                     '350': {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                     },
+                     '460': {
+                        slidesPerView: 2.5,
+                        spaceBetween: 40,
+                     },
+                     '640': {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                     },
+                     '768': {
+                        slidesPerView: 3.50,
+                        spaceBetween: 40,
+                     },
+                     '1024': {
+                        slidesPerView: 4.50,
+                        spaceBetween: 35,
+                     },
+                     '1244': {
+                        slidesPerView: 6.35,
+                        spaceBetween: 35,
+                     },
 
-               } " :modules=" [ SwiperAutoplay, SwiperNavigation ] " :navigation=" {
+                  } " :modules=" [ SwiperAutoplay, SwiperNavigation ] " :navigation=" {
    prevEl: '.swiper-button-next',
    nextEl: '.swiper-button-prev',
 } " :autoplay=" {
    delay: 2000,
    disableOnInteraction: false,
 } " :grab-cursor=" true ">
-                  <template v-if=" isLoading ">
                      <swiper-slide class=" animate-pulse">
                      </swiper-slide>
                      <swiper-slide class=" animate-pulse">
@@ -64,18 +64,56 @@
                      </swiper-slide>
                      <swiper-slide class=" animate-pulse">
                      </swiper-slide>
+                  </Swiper>
+               </template>
+               <template v-else>
 
+                  <Swiper :breakpoints=" {
+                     '200': {
+                        slidesPerView: 1,
+                        spaceBetween: 50,
+                     },
+                     '350': {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                     },
+                     '460': {
+                        slidesPerView: 2.5,
+                        spaceBetween: 40,
+                     },
+                     '640': {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                     },
+                     '768': {
+                        slidesPerView: 3.50,
+                        spaceBetween: 40,
+                     },
+                     '1024': {
+                        slidesPerView: 4.50,
+                        spaceBetween: 35,
+                     },
+                     '1244': {
+                        slidesPerView: 6.35,
+                        spaceBetween: 35,
+                     },
 
-                  </template>
-                  <template v-else>
-                     <swiper-slide v-for="          item            in            sliderData           ">
+                  } " :modules=" [ SwiperAutoplay, SwiperNavigation ] " :navigation=" {
+   prevEl: '.swiper-button-next',
+   nextEl: '.swiper-button-prev',
+} " :autoplay=" {
+   delay: 2000,
+   disableOnInteraction: false,
+} " :grab-cursor=" true ">
+
+                     <swiper-slide
+                        v-for="            item              in              sliderData             ">
                         <LazyNuxtImg @load=" imageLoaded " loading="lazy" format="webp"
                            :src=" item.main_image || '../assets/logo.png' " quality="50"
                            :alt=" item.name " />
                      </swiper-slide>
-                  </template>
-               </Swiper>
-
+                  </Swiper>
+               </template>
                <div class="swiper-button-prev  md:px-4  pt-12">
                </div>
             </div>
