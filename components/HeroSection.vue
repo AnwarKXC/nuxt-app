@@ -3,39 +3,28 @@
       <div class="z-10 fixed hidden md:flex flex-col  bottom-10 rtl:right-2 ltr:left-2 ">
          <LazySwippingTop />
       </div>
-      <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
-         delay: 3000,
-         disableOnInteraction: false,
-      } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
-         :pagination=" value ">
-         <template v-if=" isLoading " >
+      <template v-if=" isLoading ">
+         <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
+            delay: 3000,
+            disableOnInteraction: false,
+         } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
+            :pagination=" value ">
             <swiper-slide class=" animate-pulse bg-zinc-200">
-               
             </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-zinc-200">
-               
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-zinc-200">
-               
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-zinc-200">
-               
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-zinc-200">
-               
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-zinc-200">
-               
-            </swiper-slide>
+         </swiper>
+      </template>
+      <template v-else>
+         <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
+            delay: 3000,
+            disableOnInteraction: false,
+         } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
+            :pagination=" value ">
 
-
-         </template>
-         <template v-else>
-            <swiper-slide v-for="item  in   sliderData  ">
+            <swiper-slide v-for="   item     in      sliderData     ">
                <SliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
-         </template>
-      </swiper>
+         </swiper>
+      </template>
    </section>
 </template>
 <script setup>
