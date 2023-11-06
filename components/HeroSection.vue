@@ -4,17 +4,15 @@
          <LazySwippingTop />
       </div>
 
-       <ClientOnly>
          <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
             delay: 3000,
             disableOnInteraction: false,
          } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
             :pagination=" value ">
-               <swiper-slide v-for="     item      in     sliderData      ">
+               <swiper-slide v-for=" item  in  sliderData ">
                   <SliderImage :item=" item " :key=" item.id " />
                </swiper-slide>
          </swiper>
-       </ClientOnly>
 
 
    </section>
