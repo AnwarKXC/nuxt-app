@@ -44,7 +44,7 @@ export default defineNuxtConfig({
                options: {
                   cacheName: "Refine",
                   expiration: {
-                     maxEntries: 100,
+                     maxEntries: 10,
                      maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
                   },
                   cacheableResponse: {
@@ -56,7 +56,6 @@ export default defineNuxtConfig({
       },
       devOptions: {
          enabled: true,
-
          suppressWarnings: true,
          navigateFallbackAllowlist: [/^\/$/],
          type: "module",
