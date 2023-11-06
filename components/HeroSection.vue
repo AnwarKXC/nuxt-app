@@ -9,7 +9,8 @@
             disableOnInteraction: false,
          } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
             :pagination=" value ">
-            <swiper-slide class=" animate-pulse bg-zinc-200">
+            <swiper-slide>
+               <AnimatedBackground/>
             </swiper-slide>
          </swiper>
       </template>
@@ -20,7 +21,7 @@
          } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
             :pagination=" value ">
 
-            <swiper-slide v-for="   item     in      sliderData     ">
+            <swiper-slide v-for=" item  in sliderData  ">
                <SliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
          </swiper>
@@ -97,7 +98,6 @@ watchEffect( () => {
    background-color: #eee;
    background-repeat: no-repeat;
    background-position: center;
-   background-image: url("../assets/logo.png");
    display: flex;
    justify-content: center;
    align-items: center;

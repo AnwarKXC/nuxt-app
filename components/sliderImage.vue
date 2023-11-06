@@ -1,6 +1,6 @@
 <template>
    <a class="   aspect-[2/.8]" target="_blank" :href="item.url||'/'">
-      <LazyNuxtImg  @load=" imageLoaded " loading="lazy" format="webp" quality="50" class="w-screen aspect-[2/.88]" :src=" item.main_image ||'../assets/logo.png'" :alt=" item.description || 'slide' "
+      <LazyNuxtImg  @load=" imageLoaded " loading="lazy" format="webp" quality="50" class="w-screen aspect-[2/.88]" :src=" item.main_image " :alt=" item.description || 'slide' "
       />
    </a>
 </template>

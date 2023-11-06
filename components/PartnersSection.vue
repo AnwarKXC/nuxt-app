@@ -174,8 +174,6 @@ const imageLoaded = () => {
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
-   background-image: url("../assets/logo.png");
-
    display: flex;
    justify-content: center;
    align-items: center;
