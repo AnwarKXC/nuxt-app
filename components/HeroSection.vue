@@ -12,6 +12,15 @@
             <swiper-slide>
                <AnimatedBackground/>
             </swiper-slide>
+            <swiper-slide>
+               <AnimatedBackground/>
+            </swiper-slide>
+            <swiper-slide>
+               <AnimatedBackground/>
+            </swiper-slide>
+            <swiper-slide>
+               <AnimatedBackground/>
+            </swiper-slide>
          </swiper>
       </template>
       <template v-else>
@@ -54,8 +63,6 @@ const getData = async () => {
 
 onMounted( async () => {
    await getData()
-
-
 } )
 
 
