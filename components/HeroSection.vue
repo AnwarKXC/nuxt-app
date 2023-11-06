@@ -8,19 +8,10 @@
          disableOnInteraction: false,
       } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
          :pagination=" value ">
-         <template v-if=" isLoading ">
-            <swiper-slide class=" animate-pulse bg-black">
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-black">
-            </swiper-slide>
-            <swiper-slide class=" animate-pulse bg-black">
-            </swiper-slide>
-         </template>
-         <template v-else>
+
             <swiper-slide v-for="    item     in    sliderData     ">
                <SliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
-         </template>
       </swiper>
    </section>
 </template>
@@ -89,7 +80,6 @@ watchEffect( () => {
    background-size: contain;
    background-color: #dbdada;
    background-repeat: no-repeat;
-   background-image: url(../assets/logo.png);
    background-position: center;
    display: flex;
    justify-content: center;

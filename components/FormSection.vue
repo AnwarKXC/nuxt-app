@@ -3,18 +3,18 @@
       <div class="flex flex-col md:flex-row justify-center items-center md:gap-10 ">
          <div class="flex flex-col container">
             <label for="form">{{ $t( 'الإسم' ) }}</label>
-            <input autocomplete="additional-name" id="form" maxlength="100" minlength="10" type="name"
-                :placeholder=" $t( 'قم بإدخال الاسم' ) " />
+            <input v-model="nameRef" autocomplete="additional-name" id="form" maxlength="100"
+               minlength="10" type="name" :placeholder=" $t( 'قم بإدخال الاسم' ) " />
          </div>
          <div class="flex flex-col container md:w-full">
             <label for="email">{{ $t( 'البريد الالكتروني' ) }}</label>
-            <input  autocomplete="additional-name"  type="email" name="email"
-               id="email" :placeholder=" $t( 'قم بإدخال البريد الالكتروني' ) " />
+            <input v-model="emailRef" type="email" name="email"
+               :placeholder=" $t( 'قم بإدخال البريد الالكتروني' ) " />
          </div>
       </div>
       <div class="flex flex-col px-2 md:px-0">
          <label for="message">{{ $t( 'الرسالة' ) }}</label>
-         <textarea  id="message" :placeholder=" $t( '... يسعدنا قراءة رسالتك' ) "
+         <textarea v-model="messageRef" id="message" :placeholder=" $t( '... يسعدنا قراءة رسالتك' ) "
             rows="4"></textarea>
       </div>
       <div class="flex justify-center">
@@ -37,7 +37,6 @@ async function submitHandler () {
          email: emailRef.value,
          message: messageRef.value,
       } )
-
       if ( response.status === 200 ) {
          window.alert( 'Message sent successfully ❤️' )
          // Clear the form fields after a successful submission

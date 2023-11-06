@@ -65,15 +65,6 @@ export default defineNuxtConfig({
    i18n: {
       vueI18n: "./i18n.config.js", // if you are using custom path, default
    },
-   routeRules: {
-      "/": {
-         ssr: true,
-      },
-      "/blog/**": {
-         ssr: true,
-         prerender: true,
-      },
-   },
    app: {
       head: {
          charset: "utf-8",
