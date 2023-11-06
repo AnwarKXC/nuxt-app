@@ -3,16 +3,20 @@
       <div class="z-10 fixed hidden md:flex flex-col  bottom-10 rtl:right-2 ltr:left-2 ">
          <LazySwippingTop />
       </div>
-      <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
-         delay: 3000,
-         disableOnInteraction: false,
-      } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
-         :pagination=" value ">
 
-            <swiper-slide v-for="    item     in    sliderData     ">
-               <SliderImage :item=" item " :key=" item.id " />
-            </swiper-slide>
-      </swiper>
+       <ClientOnly>
+         <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
+            delay: 3000,
+            disableOnInteraction: false,
+         } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
+            :pagination=" value ">
+               <swiper-slide v-for="     item      in     sliderData      ">
+                  <SliderImage :item=" item " :key=" item.id " />
+               </swiper-slide>
+         </swiper>
+       </ClientOnly>
+
+
    </section>
 </template>
 <script setup>

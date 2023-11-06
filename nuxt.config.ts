@@ -4,7 +4,6 @@ import { resolve } from "path"
 
 export default defineNuxtConfig({
    modules: ["nuxt-swiper", "@nuxt/image", "@nuxtjs/i18n", "@vite-pwa/nuxt"],
-
    pwa: {
       manifest: {
          name: "Refine",
