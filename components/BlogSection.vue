@@ -12,6 +12,8 @@
             <div class=" flex justify-center flex-wrap items-center gap-[22px] text-center pt-8 ">
                <LazyProductList v-if=" sliderData[ 0 ] " :number=" 3 " :sliderData=" sliderData " />
                <ProductCardSkelton v-if=" !sliderData[ 0 ] " />
+               <ProductCardSkelton v-if=" !sliderData[ 0 ] " />
+               <ProductCardSkelton v-if=" !sliderData[ 0 ] " />
             </div>
          </div>
       </div>

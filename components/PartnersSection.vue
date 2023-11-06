@@ -48,25 +48,46 @@
    delay: 2000,
    disableOnInteraction: false,
 } " :grab-cursor=" true ">
-                     <swiper-slide class=" animate-pulse">
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
-                     <swiper-slide class=" animate-pulse">
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
                      </swiper-slide>
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
+                     </swiper-slide>
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
+                     </swiper-slide>
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
+                     </swiper-slide>
+                    
+                     <swiper-slide class="swiper-slide-loader animate-pulse">
+                     </swiper-slide>
+                    
+
                   </Swiper>
                </template>
-               <template v-else>
+               <template v-if="!isLoading">
 
                   <Swiper :breakpoints=" {
                      '200': {
@@ -109,7 +130,7 @@
                      <swiper-slide
                         v-for="            item              in              sliderData             ">
                         <LazyNuxtImg @load=" imageLoaded " loading="lazy" format="webp"
-                           :src=" item.main_image || '../assets/logo.png' " quality="50"
+                           :src=" item.main_image " quality="50"
                            :alt=" item.name " />
                      </swiper-slide>
                   </Swiper>
@@ -166,7 +187,6 @@ const imageLoaded = () => {
 
 
 .swiper-slide {
-   /* Center slide text vertically */
    max-width: 175px;
    border-radius: 15px;
    aspect-ratio: 1/1;
@@ -174,6 +194,19 @@ const imageLoaded = () => {
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
+   background-image: url("../assets/logo.png");
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.swiper-slide-loader {
+   max-width: 175px;
+   border-radius: 15px;
+   aspect-ratio: 1/1;
+   overflow: hidden;
+   margin: 0 20px;
+   background-color: rgb(175, 175, 175);
+background-image: none;
    display: flex;
    justify-content: center;
    align-items: center;

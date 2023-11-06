@@ -3,29 +3,37 @@
       <div class="z-10 fixed hidden md:flex flex-col  bottom-10 rtl:right-2 ltr:left-2 ">
          <LazySwippingTop />
       </div>
-
+<div v-if="  isLoading "   class=" animate-pulse">
+   <AnimatedBackground/>
+</div>
+      <template v-if=" !isLoading ">
          <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
             delay: 3000,
             disableOnInteraction: false,
          } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
             :pagination=" value ">
-               <swiper-slide v-for=" item  in  sliderData ">
+            <swiper-slide v-if=" isLoading " class=" animate-pulse">
+               <AnimatedBackground/>
+            </swiper-slide>
+            <template v-else>
+               <swiper-slide  v-for="  item   in   sliderData  ">
                   <SliderImage :item=" item " :key=" item.id " />
                </swiper-slide>
+            </template>
          </swiper>
+      </template>
 
 
    </section>
 </template>
 <script setup>
 const { locale } = useI18n()
-let isLoading = ref( null )
+let isLoading = ref( true )
 
 import axios from 'axios'
 let sliderData = ref( [] )
 const getData = async () => {
    try {
-      isLoading.value = true
       const response = await axios.get( 'https://dev.refine-care.com/api/v1/slider', {
          headers: {
             lang: locale.value
@@ -80,7 +88,6 @@ watchEffect( () => {
    width: 100vw;
    aspect-ratio: 2/.8;
    background-size: contain;
-   background-color: #dbdada;
    background-repeat: no-repeat;
    background-position: center;
    display: flex;
