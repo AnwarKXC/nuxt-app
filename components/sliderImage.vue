@@ -22,6 +22,7 @@ const imageLoaded = () => {
 </script>
 
 <style  scoped>
+
 .flip-img {
    transform: rotateY(180deg);
 }

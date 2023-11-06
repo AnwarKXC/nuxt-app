@@ -8,7 +8,7 @@
          </div>
          <div class="flex flex-col container md:w-full">
             <label for="email">{{ $t( 'البريد الالكتروني' ) }}</label>
-            <input autocomplete="additional-name"  type="email" name="email"
+            <input  autocomplete="additional-name"  type="email" name="email"
                id="email" :placeholder=" $t( 'قم بإدخال البريد الالكتروني' ) " />
          </div>
       </div>

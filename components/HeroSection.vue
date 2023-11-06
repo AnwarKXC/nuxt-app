@@ -3,48 +3,36 @@
       <div class="z-10 fixed hidden md:flex flex-col  bottom-10 rtl:right-2 ltr:left-2 ">
          <LazySwippingTop />
       </div>
-      <template v-if=" isLoading ">
-         <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
-            delay: 3000,
-            disableOnInteraction: false,
-         } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
-            :pagination=" value ">
-            <swiper-slide>
-               <AnimatedBackground/>
+      <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
+         delay: 3000,
+         disableOnInteraction: false,
+      } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
+         :pagination=" value ">
+         <template v-if=" isLoading ">
+            <swiper-slide class=" animate-pulse bg-black">
             </swiper-slide>
-            <swiper-slide>
-               <AnimatedBackground/>
+            <swiper-slide class=" animate-pulse bg-black">
             </swiper-slide>
-            <swiper-slide>
-               <AnimatedBackground/>
+            <swiper-slide class=" animate-pulse bg-black">
             </swiper-slide>
-            <swiper-slide>
-               <AnimatedBackground/>
-            </swiper-slide>
-         </swiper>
-      </template>
-      <template v-else>
-         <swiper class="mySwiper" :slides-per-view=" 1 " :loop=" true " :autoplay=" {
-            delay: 3000,
-            disableOnInteraction: false,
-         } " :grab-cursor=" true " :modules=" [ SwiperPagination, SwiperAutoplay ] "
-            :pagination=" value ">
-
-            <swiper-slide v-for=" item  in sliderData  ">
+         </template>
+         <template v-else>
+            <swiper-slide v-for="    item     in    sliderData     ">
                <SliderImage :item=" item " :key=" item.id " />
             </swiper-slide>
-         </swiper>
-      </template>
+         </template>
+      </swiper>
    </section>
 </template>
 <script setup>
 const { locale } = useI18n()
-let isLoading = ref( true )
+let isLoading = ref( null )
 
 import axios from 'axios'
 let sliderData = ref( [] )
 const getData = async () => {
    try {
+      isLoading.value = true
       const response = await axios.get( 'https://dev.refine-care.com/api/v1/slider', {
          headers: {
             lang: locale.value
@@ -52,10 +40,7 @@ const getData = async () => {
       } )
       const data = await response.data.records
       sliderData.value = await data
-
-      setTimeout( () => {
-         isLoading.value = false
-      }, 1000 )
+      isLoading.value = false
    } catch ( error ) {
       console.error( 'Error fetching data:', error )
    }
@@ -102,8 +87,9 @@ watchEffect( () => {
    width: 100vw;
    aspect-ratio: 2/.8;
    background-size: contain;
-   background-color: #eee;
+   background-color: #dbdada;
    background-repeat: no-repeat;
+   background-image: url(../assets/logo.png);
    background-position: center;
    display: flex;
    justify-content: center;
