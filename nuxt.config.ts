@@ -1,9 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 import { resolve } from "path"
 
-export default defineNuxtConfig({
-   modules: ["nuxt-swiper", "@nuxt/image", "@nuxtjs/i18n", "@vite-pwa/nuxt"],
+export default {
+   buildModules: ["@nuxt/pwa"],
    pwa: {
       manifest: {
          name: "Refine",
@@ -39,12 +37,26 @@ export default defineNuxtConfig({
          runtimeCaching: [
             {
                urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-               handler: "NetworkOnly",
+               handler: "CacheFirst", // Use "CacheFirst" strategy
                options: {
                   cacheName: "Refine",
                   expiration: {
                      maxEntries: 10,
-                     maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+                     maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+                  },
+                  cacheableResponse: {
+                     statuses: [0],
+                  },
+               },
+            },
+            {
+               urlPattern: /\.(js|css|png|jpg|svg)$/, // Modify this pattern to match your resources
+               handler: "CacheFirst", // Use "CacheFirst" strategy
+               options: {
+                  cacheName: "Refine-assets",
+                  expiration: {
+                     maxEntries: 50, // Adjust as needed
+                     maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
                   },
                   cacheableResponse: {
                      statuses: [0],
@@ -53,28 +65,17 @@ export default defineNuxtConfig({
             },
          ],
       },
-      devOptions: {
-         enabled: true,
-         suppressWarnings: true,
-         type: "module",
-      },
    },
-   i18n: {
-      vueI18n: "./i18n.config.js", // if you are using custom path, default
-   },
-   app: {
-      head: {
-         title: "Refine",
-         charset: "utf-8",
-         viewport: "width=device-width, initial-scale=1",
-         link: [{ rel: "icon", type: "image/x-icon", href: "/64.svg" }],
-      },
+   head: {
+      title: "Refine",
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      link: [{ rel: "icon", type: "image/x-icon", href: "/64.svg" }],
    },
    alias: {
-      assets: "/<rootDir>/assets",
-      "@": resolve(__dirname, "/"),
+      assets: resolve(__dirname, "assets"),
+      "@": resolve(__dirname),
    },
-   devtools: { enabled: true },
    css: ["/assets/main.css"],
    postcss: {
       plugins: {
@@ -82,4 +83,4 @@ export default defineNuxtConfig({
          autoprefixer: {},
       },
    },
-})
+}
