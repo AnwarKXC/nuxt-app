@@ -6,7 +6,11 @@
       <div class="flex flex-col items-center">
          <h1 class="title">{{ $t( 'المدونة' ) }}</h1>
          <LazyProductList :sliderData=" sliderData.data " />
-         <ProductCardSkelton v-if=" !sliderData.data " />
+         <div class="gap-[22px]  flex justify-center items-center flex-wrap ">
+            <ProductCardSkelton v-if=" !sliderData.data " />
+            <ProductCardSkelton v-if=" !sliderData.data " />
+            <ProductCardSkelton v-if=" !sliderData.data " />
+         </div>
          <paginate :page-count=" ( sliderData.total / 10 ) " :page-range=" 3 " :margin-pages=" 1 "
             :click-handler=" onClickHandler " :prev-text=" '<' " :next-text=" '>' "
             :container-class=" 'pagination-container' " :page-class=" 'paginate-buttons' "
