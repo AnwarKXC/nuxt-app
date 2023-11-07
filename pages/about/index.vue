@@ -44,6 +44,7 @@ const getData = async () => {
             lang: locale.value
          }
       } )
+      console.log( response.data.records.data )
       const data = response.data.records.data[ 0 ]
       aboutData.value = data
    } catch ( error ) {
