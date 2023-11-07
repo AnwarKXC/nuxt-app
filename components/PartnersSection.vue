@@ -129,7 +129,7 @@
 
                      <swiper-slide
                         v-for="            item              in              sliderData             ">
-                        <LazyNuxtImg @load=" imageLoaded " loading="lazy" format="webp"
+                        <img @load=" imageLoaded " loading="lazy" format="webp"
                            :src=" item.main_image " quality="50"
                            :alt=" item.name " />
                      </swiper-slide>

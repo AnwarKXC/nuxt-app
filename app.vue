@@ -12,7 +12,8 @@
 <script setup>
 useSeoMeta( {
   title: 'Refine',
-  description: 'Refine'
+  description: 'Refine',
+  
 } )
 const { locale } = useI18n()
 watchEffect( () => {

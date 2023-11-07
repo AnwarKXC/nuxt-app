@@ -3,7 +3,7 @@
       <section
          class="container  flex gap-4 flex-col md:flex-row justify-center items-center font-arabic ">
          <div class=" relative pt-3 ">
-            <LazyNuxtImg format="webp" src="../assets/35.png" alt=""/>
+            <img format="webp" src="../assets/35.png" alt=""/>
          </div>
          <div class="text-xl text-right  max-w-[538px] md:order-first   ">
             <h1 class="title">{{ $t( "حمل تطبيق ريفاين و واطمن علي صحتك في أي وقت" ) }}</h1>

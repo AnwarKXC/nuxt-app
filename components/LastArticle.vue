@@ -4,7 +4,7 @@
       <div
          class="  cursor-pointer flex gap-1 rounded-[15px] overflow-hidden border border-[#BFBFBF] max-w-[350px] min-w-[250px] md:max-w-[260px] lg:min-w-[300px] xl:min-w-[400px]  aspect-[4/1] my-2 ">
          <div class=" aspect-[2/1] h-full">
-            <NuxtImg format="webp" class=" aspect-[2/1]  " :src=" item.main_image " alt=" article photo"/>
+            <img format="webp" class=" aspect-[2/1]  " :src=" item.main_image " alt=" article photo"/>
          </div>
          <div>
             <h2

@@ -1,9 +1,9 @@
 <template>
    <a class="aspect-[2/.8] bgx" target="_blank" :href=" item.url || '/' ">
-      <LazyNuxtImg @load=" imageLoaded " loading="lazy"
+      <img @load=" imageLoaded " loading="lazy"
          class="w-screen aspect-[2/.88]" :src=" item.main_image " :alt=" item.description "
          :style=" imageStyle ">
-      </LazyNuxtImg>
+     
    </a>
 </template>
 

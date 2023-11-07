@@ -1,5 +1,4 @@
 <template>
-   <ClientOnly>
       <header class="fixed w-screen   uppercase  font-arabic z-40 bg-white ">
          <div class=" container py-4  flex  md:justify-between  md:gap-8 items-center text-lg ">
             <div class="flex md:gap-6 md:justify-start  justify-between  flex-grow  items-center">
@@ -88,7 +87,6 @@
             </BaseModal>
          </div>
       </header>
-   </ClientOnly>
 </template>
 
 <script setup >
