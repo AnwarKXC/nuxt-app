@@ -65,7 +65,6 @@ export default defineNuxtConfig({
    app: {
       head: {
          title: "Refine",
-         
          charset: "utf-8",
          viewport: "width=device-width, initial-scale=1",
          link: [{ rel: "icon", type: "image/x-icon", href: "/64.svg" }],
