@@ -33,7 +33,7 @@
                   <swiper-slide v-for="    item     in     sliderData   ">
                      <div class="text-20px flex flex-col justify-center items-center">
                         <div class="serv">
-                           <LazyNuxtImg format="webp" :src=" item.main_image " alt="" />
+                           <img format="webp" :src=" item.main_image " alt="" />
                         </div>
                         <p>{{ item.name }}</p>
                      </div>
