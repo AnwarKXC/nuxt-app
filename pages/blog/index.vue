@@ -6,7 +6,7 @@
       <div class="flex flex-col items-center">
          <h1 class="title">{{ $t( 'المدونة' ) }}</h1>
          <LazyProductList :sliderData=" sliderData.data " />
-         <div class="gap-[22px]  flex justify-center items-center flex-wrap ">
+         <div class="gap-[22px]  flex justify-center items-center flex-wrap mb-4 ">
             <ProductCardSkelton v-if=" !sliderData.data " />
             <ProductCardSkelton v-if=" !sliderData.data " />
             <ProductCardSkelton v-if=" !sliderData.data " />
